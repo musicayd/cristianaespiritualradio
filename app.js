@@ -365,7 +365,20 @@ if(savedSong !== null){
 
 audio.src = songs[currentSong].file;
 
+const coverImage = document.getElementById("coverImage");
+
 songTitle.innerText = songs[currentSong].title;
+
+/* CAMBIAR PORTADA */
+
+if(songs[currentSong].file === "yoteseguire.mp3"){
+
+    coverImage.src = "yoteseguire.png";
+
+}else{
+
+    coverImage.src = "portada.jpg";
+}
 
 /* CONTINUAR SOLO MISMA CANCION */
 
