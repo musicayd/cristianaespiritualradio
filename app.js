@@ -338,6 +338,8 @@ const songs = [
 
     { title: "Reflexion", file: "reflexion.mp3" },
 
+     { title: "Cara a cara", file: "Caraacara.mp3" },
+
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
