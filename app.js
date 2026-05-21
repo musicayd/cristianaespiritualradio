@@ -377,7 +377,7 @@ if(songs[currentSong].file === "yoteseguire.mp3"){
 
 }else{
 
-    coverImage.src = "portada.jpg";
+    coverImage.src = "portada.png";
 }
 
 /* CONTINUAR SOLO MISMA CANCION */
