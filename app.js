@@ -342,6 +342,8 @@ const songs = [
 
         { title: "Vino el Señor (Joiarib)", file: "vinoelsenor.mp3" },
 
+    { title: "Bello Amanecer (Joiarib)", file: "belloam.mp3" },
+
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
