@@ -377,7 +377,6 @@ const coverImage = document.getElementById("coverImage");
 
 songTitle.innerText = songs[currentSong].title;
 
-/* CAMBIAR PORTADA */
 
 /* CAMBIAR PORTADAS */
 
