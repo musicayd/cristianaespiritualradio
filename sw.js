@@ -1,4 +1,4 @@
-const CACHE_NAME = "radio-cache-v5";
+const CACHE_NAME = "radio-cache-v10";
 
 const urlsToCache = [
 
@@ -7,30 +7,22 @@ const urlsToCache = [
     "./style.css",
     "./app.js",
     "./manifest.json",
+
     "./icon.png",
     "./portada.png",
-    "./intro.jpeg"
+    "./intro.jpeg",
+
+    "./yoteseguire.jpg",
+    "./laobramaravillosa.jpeg"
 ];
 
 /* =========================
-   FORCE UPDATE
+   INSTALL
 ========================= */
 
-self.addEventListener("install", () => {
+self.addEventListener("install", (event) => {
 
     self.skipWaiting();
-});
-
-self.addEventListener("activate", (event) => {
-
-    event.waitUntil(clients.claim());
-});
-
-/* =========================
-   CACHE FILES
-========================= */
-
-self.addEventListener("install", event => {
 
     event.waitUntil(
 
@@ -43,17 +35,55 @@ self.addEventListener("install", event => {
 });
 
 /* =========================
+   ACTIVATE
+========================= */
+
+self.addEventListener("activate", (event) => {
+
+    event.waitUntil(
+
+        caches.keys().then(cacheNames => {
+
+            return Promise.all(
+
+                cacheNames.map(cache => {
+
+                    if(cache !== CACHE_NAME){
+
+                        return caches.delete(cache);
+                    }
+                })
+            );
+        }).then(() => clients.claim())
+    );
+});
+
+/* =========================
    FETCH
 ========================= */
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
 
     event.respondWith(
 
-        caches.match(event.request)
+        fetch(event.request)
+
             .then(response => {
 
-                return response || fetch(event.request);
+                const responseClone = response.clone();
+
+                caches.open(CACHE_NAME)
+                    .then(cache => {
+
+                        cache.put(event.request, responseClone);
+                    });
+
+                return response;
+            })
+
+            .catch(() => {
+
+                return caches.match(event.request);
             })
     );
 });
