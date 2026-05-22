@@ -344,6 +344,8 @@ const songs = [
 
     { title: "Bello Amanecer (Joiarib)", file: "belloam.mp3" },
 
+    { title: "La obra maravillosa", file: "laobramaravillosa.mp3" },
+
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
@@ -377,11 +379,19 @@ songTitle.innerText = songs[currentSong].title;
 
 /* CAMBIAR PORTADA */
 
+/* CAMBIAR PORTADAS */
+
 if(songs[currentSong].file === "yoteseguire.mp3"){
 
-    coverImage.src = "yoteseguire.jpeg";
+    coverImage.src = "yoteseguire.jpg";
+}
 
-}else{
+else if(songs[currentSong].file === "laobramaravillosa.mp3"){
+
+    coverImage.src = "laobramaravillosa.jpeg";
+}
+
+else{
 
     coverImage.src = "portada.png";
 }
