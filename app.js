@@ -366,7 +366,7 @@ if(savedSong !== null){
 
 }else{
 
-    currentSong = Math.floor(Math.random() * songs.length);
+    currentSong = songs.findIndex(song => song.file === "yoteseguire.mp3");
 }
 
 audio.src = songs[currentSong].file;
