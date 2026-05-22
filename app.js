@@ -368,7 +368,7 @@ if(savedSong !== null){
 
 }else{
 
-    currentSong = songs.findIndex(song => song.file === "laobramaravillosa.mp3");
+    currentSong = Math.floor(Math.random() * songs.length);
 }
 
 audio.src = songs[currentSong].file;
