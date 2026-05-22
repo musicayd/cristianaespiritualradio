@@ -379,7 +379,7 @@ songTitle.innerText = songs[currentSong].title;
 
 if(songs[currentSong].file === "yoteseguire.mp3"){
 
-    coverImage.src = "yoteseguire.png";
+    coverImage.src = "yoteseguire.jpeg";
 
 }else{
 
