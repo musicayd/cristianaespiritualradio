@@ -574,7 +574,14 @@ firebase.auth().onAuthStateChanged(user => {
 
 db.ref("likes").on("value", snapshot => {
 
-    likeBtn.innerHTML = `❤️ ${snapshot.val() || 0}`;
+    likeBtn.innerHTML = `
+    
+        ✨ Gloria a Dios ✨
+        
+        <span>
+            Aleluya • Amén • ${snapshot.val() || 0}
+        </span>
+    `;
 });
 
 likeBtn.addEventListener("click", () => {
