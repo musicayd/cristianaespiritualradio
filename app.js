@@ -122,6 +122,8 @@ const songs = [
 
     { title: "📻 Radio", file: "AnuncioRadio.mp3" },
 
+    { title: "📻 Radio", file: "radioanuncio2.mp3" },
+
     { title: "Calles de oro", file: "CallesDeOro.mp3" },
 
     { title: "Camina Por Las Aguas", file: "CaminaPorLasAguas.mp3" },
@@ -472,32 +474,52 @@ setInterval(() => {
 
     
 /* =========================
-   SHUFFLE INTELIGENTE
+   SHUFFLE + ANUNCIOS
 ========================= */
 
 let songsPlayed = 0;
+
+let songsPlayedForAd2 = 0;
 
 let playedSongs = [];
 
 audio.addEventListener("ended", () => {
 
-    /* SI TERMINO EL ANUNCIO */
-    if(songs[currentSong].file === "AnuncioRadio.mp3"){
+    const currentFile = songs[currentSong].file;
+
+    /* SI TERMINÓ UN ANUNCIO */
+    if(
+        currentFile === "AnuncioRadio.mp3" ||
+        currentFile === "radioanuncio2.mp3"
+    ){
 
         currentSong = getRandomSong();
+    }
 
-    }else{
+    else{
 
         songsPlayed++;
 
-        /* CADA 3 CANCIONES */
-        if(songsPlayed >= 3){
+        songsPlayedForAd2++;
+
+        /* ANUNCIO CADA 10 */
+        if(songsPlayedForAd2 >= 10){
+
+            currentSong = 1;
+
+            songsPlayedForAd2 = 0;
+        }
+
+        /* ANUNCIO CADA 3 */
+        else if(songsPlayed >= 3){
 
             currentSong = 0;
 
             songsPlayed = 0;
+        }
 
-        }else{
+        /* MUSICA NORMAL */
+        else{
 
             currentSong = getRandomSong();
         }
@@ -520,9 +542,7 @@ audio.addEventListener("ended", () => {
 
 function getRandomSong(){
 
-    /* RESETEAR HISTORIAL */
-
-    if(playedSongs.length >= songs.length - 1){
+    if(playedSongs.length >= songs.length - 2){
 
         playedSongs = [];
     }
@@ -531,7 +551,7 @@ function getRandomSong(){
 
     do{
 
-        randomSong = Math.floor(Math.random() * (songs.length - 1)) + 1;
+        randomSong = Math.floor(Math.random() * (songs.length - 2)) + 2;
 
     }while(playedSongs.includes(randomSong));
 
