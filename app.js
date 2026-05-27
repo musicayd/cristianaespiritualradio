@@ -678,3 +678,49 @@ document.addEventListener("visibilitychange", async () => {
         }
     }
 });
+
+/* =========================
+   VOZ AUTOMATICA RELOJ
+========================= */
+
+let lastHourAnnounced = -1;
+
+setInterval(() => {
+
+    const now = new Date();
+
+    const hour = now.getHours();
+
+    const minutes = now.getMinutes();
+
+    /* SOLO UNA VEZ POR HORA */
+  if(hour !== lastHourAnnounced){
+
+        lastHourAnnounced = hour;
+
+        let displayHour = hour % 12 || 12;
+
+        let period = hour >= 12 ? "de la tarde" : "de la mañana";
+
+        if(hour >= 19){
+
+            period = "de la noche";
+        }
+
+        if(hour < 6){
+
+            period = "de la madrugada";
+        }
+
+        const mensaje = `Radio Cristiana Espiritual. Son las ${displayHour} ${period}`;
+
+        const voz = new SpeechSynthesisUtterance(mensaje);
+
+        voz.lang = "es-MX";
+
+        voz.rate = 1;
+
+        speechSynthesis.speak(voz);
+    }
+
+}, 30000);
