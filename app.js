@@ -720,7 +720,20 @@ setInterval(() => {
 
         voz.rate = 1;
 
-        speechSynthesis.speak(voz);
+        /* BAJAR VOLUMEN */
+
+audio.volume = 0.08;
+
+/* HABLAR */
+
+speechSynthesis.speak(voz);
+
+/* CUANDO TERMINE */
+
+voz.onend = () => {
+
+    audio.volume = 1;
+};
     }
 
 }, 30000);
