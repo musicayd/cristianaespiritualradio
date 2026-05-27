@@ -694,7 +694,7 @@ setInterval(() => {
     const minutes = now.getMinutes();
 
     /* SOLO UNA VEZ POR HORA */
-  if(hour !== lastHourAnnounced){
+    if(minutes === 0 && hour !== lastHourAnnounced){
 
         lastHourAnnounced = hour;
 
