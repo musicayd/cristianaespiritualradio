@@ -712,7 +712,7 @@ setInterval(() => {
             period = "de la madrugada";
         }
 
-        const mensaje = `Radio Cristiana Espiritual. Son las ${displayHour} ${period}`;
+        const mensaje = `Paz de Dios. Radio Cristiana Espiritual te da la hora. Son las ${displayHour} ${period}`;
 
         const voz = new SpeechSynthesisUtterance(mensaje);
 
@@ -720,9 +720,12 @@ setInterval(() => {
 
         voz.rate = 1;
 
-        /* BAJAR VOLUMEN */
+       /* CUANDO EMPIECE A HABLAR */
 
-audio.volume = 0.08;
+voz.onstart = () => {
+
+    audio.volume = 0.08;
+};
 
 /* HABLAR */
 
@@ -734,6 +737,3 @@ voz.onend = () => {
 
     audio.volume = 1;
 };
-    }
-
-}, 30000);
