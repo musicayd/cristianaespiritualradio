@@ -678,12 +678,11 @@ document.addEventListener("visibilitychange", async () => {
         }
     }
 });
-
 /* =========================
    VOZ AUTOMATICA RELOJ
 ========================= */
 
-let lastHourAnnounced = -1;
+let lastHourAnnounced = "";
 
 setInterval(() => {
 
@@ -693,14 +692,20 @@ setInterval(() => {
 
     const minutes = now.getMinutes();
 
-    /* SOLO UNA VEZ POR HORA */
-    if(minutes === 0 && hour !== lastHourAnnounced){
+    /* CADA HORA Y MEDIA HORA */
 
-        lastHourAnnounced = hour;
+    if(
+        (minutes === 0 || minutes === 30) &&
+        lastHourAnnounced !== `${hour}:${minutes}`
+    ){
+
+        lastHourAnnounced = `${hour}:${minutes}`;
 
         let displayHour = hour % 12 || 12;
 
-        let period = hour >= 12 ? "de la tarde" : "de la mañana";
+        let period = hour >= 12
+            ? "de la tarde"
+            : "de la mañana";
 
         if(hour >= 19){
 
@@ -712,7 +717,15 @@ setInterval(() => {
             period = "de la madrugada";
         }
 
-        const mensaje = `Paz de Dios. Radio Cristiana Espiritual te da la hora. Son las ${displayHour} ${period}`;
+        let minutoTexto = "";
+
+        if(minutes === 30){
+
+            minutoTexto = " y media";
+        }
+
+        const mensaje =
+            `Paz de Dios. Radio Cristiana Espiritual te da la hora. Son las ${displayHour}${minutoTexto} ${period}`;
 
         const voz = new SpeechSynthesisUtterance(mensaje);
 
@@ -720,20 +733,23 @@ setInterval(() => {
 
         voz.rate = 1;
 
-       /* CUANDO EMPIECE A HABLAR */
+        /* BAJAR VOLUMEN AL HABLAR */
 
-voz.onstart = () => {
+        voz.onstart = () => {
 
-    audio.volume = 0.08;
-};
+            audio.volume = 0.08;
+        };
 
-/* HABLAR */
+        /* HABLAR */
 
-speechSynthesis.speak(voz);
+        speechSynthesis.speak(voz);
 
-/* CUANDO TERMINE */
+        /* REGRESAR VOLUMEN */
 
-voz.onend = () => {
+        voz.onend = () => {
 
-    audio.volume = 1;
-};
+            audio.volume = 1;
+        };
+    }
+
+}, 30000);
