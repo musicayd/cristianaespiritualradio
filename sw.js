@@ -12,7 +12,7 @@ const urlsToCache = [
     "./portada.png",
     "./intro.jpeg",
 
-    "./yoteseguire.jpg",
+    "./yoteseguire.jpeg",
     "./laobramaravillosa.jpeg"
 ];
 
