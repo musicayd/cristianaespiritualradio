@@ -348,6 +348,42 @@ const songs = [
 
     { title: "La obra maravillosa", file: "laobramaravillosa.mp3" },
 
+    { title: "A Cristo conoci", file: "ACristoConoci.mp3" },
+
+    { title: "Bethel", file: "bethel.mp3" },
+
+        { title: "Cara falsa", file: "carafalsa.mp3" },
+
+     { title: "Es Jesus", file: "esjesus.mp3" },
+
+    { title: "Es Jesus", file: "esjesus2.mp3" },
+
+    { title: "Han pasado los años", file: "hanpasadolosaños.mp3" },
+
+    { title: "Meditacion", file: "meditacion.mp3" },
+
+    { title: "Mi primer amor", file: "miprimeramor.mp3" },
+
+    { title: "Mi primer amor, Ver. Trio", file: "miprimeramortrio.mp3" },
+
+     { title: "Mis plegarias", file: "misplegarias.mp3" },
+
+    { title: "Nos critican", file: "noscritican.mp3" },
+
+    { title: "Nos critican", file: "noscritican2.mp3" },
+
+    { title: "No te equivoques", file: "noteequivoques.mp3" },
+
+     { title: "Padre", file: "Padre.mp3" },
+
+    { title: "Quince años", file: "quinceanos.mp3" },
+
+    { title: "Servirle quiero", file: "servirlequiero.mp3" },
+
+     { title: "Vivi sin Dios", file: "vivisindios.mp3" },
+
+    { title: "Vivi sin Dios", file: "vivisindiosnorteno.mp3" },
+
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
