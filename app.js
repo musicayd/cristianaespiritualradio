@@ -396,6 +396,33 @@ let currentSong = 0;
 
 let currentUser = null;
 
+/* CANCIONES NUEVAS */
+
+const nuevasCanciones = [
+    "ACristoConoci.mp3",
+    "bethel.mp3",
+    "manosasperas.mp3",
+    "esjesus.mp3",
+    "esjesus2.mp3",
+    "hanpasadolosaños.mp3",
+    "meditacion.mp3",
+    "miprimeramor.mp3",
+    "miprimeramortrio.mp3",
+    "misplegarias.mp3",
+    "noscritican.mp3",
+    "noscritican2.mp3",
+    "noteequivoques.mp3",
+    "Padre.mp3",
+    "quinceanos.mp3",
+    "servirlequiero.mp3",
+    "vivisindios.mp3",
+    "vivisindiosnorteno.mp3",
+    "cumpleanosnorte.mp3",
+    "yoteseguire.mp3"
+];
+
+let nuevasPendientes = [...nuevasCanciones];
+
 /* =========================
    INICIO ALEATORIO + GUARDADO
 ========================= */
@@ -580,16 +607,43 @@ audio.addEventListener("ended", () => {
 
 function getRandomSong(){
 
-    if(playedSongs.length >= songs.length - 2){
+    /* PRIMERO REPRODUCIR LAS NUEVAS */
 
-        playedSongs = [];
+    if(nuevasPendientes.length > 0){
+
+        const randomNueva = Math.floor(
+            Math.random() * nuevasPendientes.length
+        );
+
+        const archivoNueva =
+            nuevasPendientes[randomNueva];
+
+        nuevasPendientes.splice(randomNueva, 1);
+
+        const indice = songs.findIndex(
+            song => song.file === archivoNueva
+        );
+
+        if(indice !== -1){
+
+            return indice;
+        }
+    }
+
+    /* EVITAR REPETICIONES */
+
+    if(playedSongs.length >= songs.length - 22){
+
+        playedSongs = playedSongs.slice(-20);
     }
 
     let randomSong;
 
     do{
 
-        randomSong = Math.floor(Math.random() * (songs.length - 2)) + 2;
+        randomSong = Math.floor(
+            Math.random() * (songs.length - 2)
+        ) + 2;
 
     }while(playedSongs.includes(randomSong));
 
