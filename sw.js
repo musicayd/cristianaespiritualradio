@@ -1,4 +1,4 @@
-const CACHE_NAME = "radio-cache-v21";
+const CACHE_NAME = "radio-cache-v22";
 
 const urlsToCache = [
 
@@ -9,7 +9,7 @@ const urlsToCache = [
     "./manifest.json",
 
     "./icon.png",
-    "./portada.png",
+    "./pportada.jpg",
     "./intro.jpeg",
 
     "./yoteseguire.jpeg",
