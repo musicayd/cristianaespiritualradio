@@ -9,7 +9,7 @@ const urlsToCache = [
     "./manifest.json",
 
     "./icon.png",
-    "./pportada.jpg",
+    "./portada.jpg",
     "./intro.jpeg",
 
     "./yoteseguire.jpeg",
