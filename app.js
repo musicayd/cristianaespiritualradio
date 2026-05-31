@@ -352,7 +352,7 @@ const songs = [
 
     { title: "Bethel", file: "bethel.mp3" },
 
-        { title: "Cara falsa", file: "carafalsa.mp3" },
+        { title: "Manos asperas", file: "manosasperas.mp3" },
 
      { title: "Es Jesus", file: "esjesus.mp3" },
 
@@ -370,7 +370,7 @@ const songs = [
 
     { title: "Nos critican", file: "noscritican.mp3" },
 
-    { title: "Nos critican", file: "noscritican2.mp3" },
+    { title: "Nos critican 2", file: "noscritican2.mp3" },
 
     { title: "No te equivoques", file: "noteequivoques.mp3" },
 
@@ -383,6 +383,8 @@ const songs = [
      { title: "Vivi sin Dios", file: "vivisindios.mp3" },
 
     { title: "Vivi sin Dios", file: "vivisindiosnorteno.mp3" },
+
+    { title: "Cumpleaños Ver. N", file: "cumpleanosnorte.mp3" },
 
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
