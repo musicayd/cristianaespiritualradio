@@ -430,7 +430,7 @@ else if(songs[currentSong].file === "laobramaravillosa.mp3"){
 
 else{
 
-    coverImage.src = "portada.png";
+    coverImage.src = "portada.jpg";
 }
 
 /* CONTINUAR SOLO MISMA CANCION */
