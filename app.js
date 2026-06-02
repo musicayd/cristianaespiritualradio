@@ -396,32 +396,6 @@ let currentSong = 0;
 
 let currentUser = null;
 
-/* CANCIONES NUEVAS */
-
-const nuevasCanciones = [
-    "ACristoConoci.mp3",
-    "bethel.mp3",
-    "manosasperas.mp3",
-    "esjesus.mp3",
-    "esjesus2.mp3",
-    "hanpasadolosaños.mp3",
-    "meditacion.mp3",
-    "miprimeramor.mp3",
-    "miprimeramortrio.mp3",
-    "misplegarias.mp3",
-    "noscritican.mp3",
-    "noscritican2.mp3",
-    "noteequivoques.mp3",
-    "Padre.mp3",
-    "quinceanos.mp3",
-    "servirlequiero.mp3",
-    "vivisindios.mp3",
-    "vivisindiosnorteno.mp3",
-    "cumpleanosnorte.mp3",
-    "yoteseguire.mp3"
-];
-
-let nuevasPendientes = [...nuevasCanciones];
 
 /* =========================
    INICIO ALEATORIO + GUARDADO
