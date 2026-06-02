@@ -585,28 +585,6 @@ function getRandomSong(){
 
     console.log("BUSCANDO OTRA CANCION");
 
-    /* PRIMERO REPRODUCIR LAS NUEVAS */
-
-    if(nuevasPendientes.length > 0){
-
-        const randomNueva = Math.floor(
-            Math.random() * nuevasPendientes.length
-        );
-
-        const archivoNueva =
-            nuevasPendientes[randomNueva];
-
-        nuevasPendientes.splice(randomNueva, 1);
-
-        const indice = songs.findIndex(
-            song => song.file === archivoNueva
-        );
-
-        if(indice !== -1){
-
-            return indice;
-        }
-    }
 
     /* EVITAR REPETICIONES */
 
