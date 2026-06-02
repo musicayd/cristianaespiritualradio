@@ -524,6 +524,8 @@ let playedSongs = [];
 
 audio.addEventListener("ended", () => {
 
+    console.log("TERMINO LA CANCION");
+
     const currentFile = songs[currentSong].file;
 
     /* SI TERMINÓ UN ANUNCIO */
@@ -580,6 +582,8 @@ audio.addEventListener("ended", () => {
 /* RANDOM SIN REPETIR */
 
 function getRandomSong(){
+
+    console.log("BUSCANDO OTRA CANCION");
 
     /* PRIMERO REPRODUCIR LAS NUEVAS */
 
