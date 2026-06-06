@@ -23,6 +23,23 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database();
 
+/* CONTADOR DE VISITAS */
+
+const today = new Date().toISOString().split("T")[0];
+
+const visitKey = "visitado_" + today;
+
+if(!localStorage.getItem(visitKey)){
+
+    db.ref("visitas/" + today).transaction(current => {
+
+        return (current || 0) + 1;
+
+    });
+
+    localStorage.setItem(visitKey, "si");
+}
+
 /* ELEMENTOS */
 
 const audio = document.getElementById("audio");
