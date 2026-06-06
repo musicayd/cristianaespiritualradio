@@ -141,6 +141,8 @@ const songs = [
 
     { title: "📻 Radio", file: "radioanuncio2.mp3" },
 
+    { title: "👋 Saludo", file: "Saludo.mp3" },
+
     { title: "Calles de oro", file: "CallesDeOro.mp3" },
 
     { title: "Camina Por Las Aguas", file: "CaminaPorLasAguas.mp3" },
@@ -545,6 +547,8 @@ let songsPlayed = 0;
 
 let songsPlayedForAd2 = 0;
 
+let songsPlayedForSaludo = 0;
+
 let playedSongs = [];
 
 audio.addEventListener("ended", () => {
@@ -553,23 +557,33 @@ audio.addEventListener("ended", () => {
 
     const currentFile = songs[currentSong].file;
 
-    /* SI TERMINÓ UN ANUNCIO */
+    /* SI TERMINÓ UN ANUNCIO O SALUDO */
     if(
         currentFile === "AnuncioRadio.mp3" ||
-        currentFile === "radioanuncio2.mp3"
+        currentFile === "radioanuncio2.mp3" ||
+        currentFile === "Saludo.mp3"
     ){
 
         currentSong = getRandomSong();
-    }
 
-    else{
+    }else{
 
         songsPlayed++;
 
         songsPlayedForAd2++;
 
+        songsPlayedForSaludo++;
+
+        /* SALUDO CADA 5 */
+        if(songsPlayedForSaludo >= 5){
+
+            currentSong = 2;
+
+            songsPlayedForSaludo = 0;
+        }
+
         /* ANUNCIO CADA 10 */
-        if(songsPlayedForAd2 >= 10){
+        else if(songsPlayedForAd2 >= 10){
 
             currentSong = 1;
 
@@ -603,7 +617,6 @@ audio.addEventListener("ended", () => {
 
     audio.play();
 });
-
 /* RANDOM SIN REPETIR */
 
 function getRandomSong(){
