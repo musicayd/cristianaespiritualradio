@@ -403,6 +403,14 @@ const songs = [
 
     { title: "Cumpleaños Ver. N", file: "cumpleanosnorte.mp3" },
 
+    { title: "A Cristo cantar", file: "acristocantar.mp3" },
+
+    { title: "Vino el Señor (Portugues)", file: "vinoelsenor.mp3" },
+
+    { title: "Ante Dios", file: "antedios.mp3" },
+
+    { title: "Puerta del cielo (Dedicacion)", file: "puertadelcielo.mp3" },
+
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
