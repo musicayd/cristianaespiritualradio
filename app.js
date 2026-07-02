@@ -143,6 +143,8 @@ const songs = [
 
     { title: "Comerciales", file: "Saludo.mp3" },
 
+    { title: "Oraciones", file: "Oracion.mp3" },
+
     { title: "Calles de oro", file: "CallesDeOro.mp3" },
 
     { title: "Camina Por Las Aguas", file: "CaminaPorLasAguas.mp3" },
@@ -554,6 +556,8 @@ let songsPlayedForAd2 = 0;
 
 let songsPlayedForSaludo = 0;
 
+let songsPlayedForOracion = 0;
+
 let playedSongs = [];
 
 audio.addEventListener("ended", () => {
@@ -562,25 +566,42 @@ audio.addEventListener("ended", () => {
 
     const currentFile = songs[currentSong].file;
 
-    /* SI TERMINÓ UN ANUNCIO O SALUDO */
+    /* SI TERMINÓ UN ANUNCIO O SALUDO O ORACIÓN */
     if(
         currentFile === "AnuncioRadio.mp3" ||
         currentFile === "radioanuncio2.mp3" ||
-        currentFile === "Saludo.mp3"
+        currentFile === "Saludo.mp3" ||
+        currentFile === "Oracion.mp3"
     ){
 
         currentSong = getRandomSong();
 
     }else{
 
+        /* CONTADORES SOLO CUANDO ES MUSICA NORMAL */
         songsPlayed++;
-
         songsPlayedForAd2++;
-
         songsPlayedForSaludo++;
+        songsPlayedForOracion++;
+
+        /* ORACIÓN CADA 15 */
+        if(songsPlayedForOracion >= 15){
+
+            const oracionIndex = songs.findIndex(
+                s => s.file === "Oracion.mp3"
+            );
+
+            if(oracionIndex !== -1){
+                currentSong = oracionIndex;
+            }else{
+                currentSong = getRandomSong();
+            }
+
+            songsPlayedForOracion = 0;
+        }
 
         /* SALUDO CADA 5 */
-        if(songsPlayedForSaludo >= 5){
+        else if(songsPlayedForSaludo >= 5){
 
             currentSong = 2;
 
@@ -611,14 +632,14 @@ audio.addEventListener("ended", () => {
     }
 
     localStorage.setItem("currentSong", currentSong);
-
     localStorage.setItem("currentTime", 0);
 
     audio.src = songs[currentSong].file;
-
     audio.currentTime = 0;
-
     songTitle.innerText = songs[currentSong].title;
+
+    audio.play();
+});
 
 
 /* CAMBIAR PORTADA AUTOMATICA */
