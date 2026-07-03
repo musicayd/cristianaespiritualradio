@@ -475,7 +475,7 @@ else{
 
             audio.currentTime = parseFloat(savedTime);
         }
-    }
+    
 });
 
 /* CONTINUAR SOLO MISMA CANCION */
