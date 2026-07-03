@@ -137,7 +137,7 @@ installBtn.addEventListener("click", async () => {
 
 const songs = [
 
-    { title: "Oraciones", file: "Oracion.mp3" },
+    { title: "Oraciones", file: "AnuncioRadio.mp3" },
 
     { title: "📻 Radio", file: "radioanuncio2.mp3" },
 
