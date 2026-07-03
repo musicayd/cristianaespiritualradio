@@ -470,15 +470,6 @@ else{
     coverImage.src = "portada.jpg";
 }
 
-/* CONTINUAR SOLO MISMA CANCION */
-
-audio.addEventListener("loadedmetadata", () => {
-
-    let lastSong = localStorage.getItem("currentSong");
-
-    let savedTime = localStorage.getItem("currentTime");
-
-    if(parseInt(lastSong) === currentSong){
 
         if(savedTime){
 
