@@ -448,34 +448,47 @@ const coverImage = document.getElementById("coverImage");
 songTitle.innerText = songs[currentSong].title;
 
 
+
 /* CAMBIAR PORTADAS */
 
 if(songs[currentSong].file === "yoteseguire.mp3"){
 
     coverImage.src = "yoteseguire.jpg";
-}
 
+}
 else if(songs[currentSong].file === "laobramaravillosa.mp3"){
 
     coverImage.src = "laobramaravillosa.jpeg";
-}
 
+}
 else if(songs[currentSong].file === "Saludo.mp3"){
 
     coverImage.src = "comerciales.jpeg";
-}
 
+}
 else{
 
     coverImage.src = "portada.jpg";
+
 }
 
+
+/* CONTINUAR SOLO MISMA CANCION */
+
+audio.addEventListener("loadedmetadata", () => {
+
+    let lastSong = localStorage.getItem("currentSong");
+
+    let savedTime = localStorage.getItem("currentTime");
+
+    if(parseInt(lastSong) === currentSong){
 
         if(savedTime){
 
             audio.currentTime = parseFloat(savedTime);
+
         }
-    
+    }
 });
 
 /* CONTINUAR SOLO MISMA CANCION */
