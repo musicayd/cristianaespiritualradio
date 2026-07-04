@@ -447,30 +447,29 @@ const coverImage = document.getElementById("coverImage");
 
 songTitle.innerText = songs[currentSong].title;
 
+function cambiarPortada(){
 
+    if(songs[currentSong].file === "yoteseguire.mp3"){
 
-/* CAMBIAR PORTADAS */
+        coverImage.src = "yoteseguire.jpg";
 
-if(songs[currentSong].file === "yoteseguire.mp3"){
+    }else if(songs[currentSong].file === "laobramaravillosa.mp3"){
 
-    coverImage.src = "yoteseguire.jpg";
+        coverImage.src = "laobramaravillosa.jpeg";
 
+    }else if(songs[currentSong].file === "Saludo.mp3"){
+
+        coverImage.src = "comerciales.jpeg";
+
+    }else{
+
+        coverImage.src = "portada.jpg";
+
+    }
 }
-else if(songs[currentSong].file === "laobramaravillosa.mp3"){
 
-    coverImage.src = "laobramaravillosa.jpeg";
 
-}
-else if(songs[currentSong].file === "Saludo.mp3"){
-
-    coverImage.src = "comerciales.jpeg";
-
-}
-else{
-
-    coverImage.src = "portada.jpg";
-
-}
+cambiarPortada();
 
 
 
@@ -622,10 +621,12 @@ audio.addEventListener("ended", () => {
     localStorage.setItem("currentTime", 0);
 
     audio.src = songs[currentSong].file;
-    audio.currentTime = 0;
-    songTitle.innerText = songs[currentSong].title;
+audio.currentTime = 0;
+songTitle.innerText = songs[currentSong].title;
 
-    audio.play();
+cambiarPortada();
+
+audio.play();
 });
 
 
