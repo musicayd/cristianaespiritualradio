@@ -630,6 +630,8 @@ songTitle.innerText = songs[currentSong].title;
 
 cambiarPortada();
 
+    activarWakeLock();
+
 audio.play();
 });
 
