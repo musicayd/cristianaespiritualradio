@@ -461,6 +461,10 @@ function cambiarPortada(){
 
         coverImage.src = "comerciales.jpeg";
 
+    }else if(songs[currentSong].file === "Oracion.mp3"){
+
+        coverImage.src = "Oracion (2).gif";
+
     }else{
 
         coverImage.src = "portada.jpg";
