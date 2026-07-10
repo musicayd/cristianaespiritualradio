@@ -143,7 +143,7 @@ const songs = [
 
     { title: "Comerciales", file: "Saludo.mp3" },
 
-    { title: "Saludos", file: "Oracion.mp3" },
+    { title: "Felicitaciones", file: "Oracion.mp3" },
 
     { title: "Calles de oro", file: "CallesDeOro.mp3" },
 
