@@ -457,6 +457,10 @@ function cambiarPortada(){
 
         coverImage.src = "laobramaravillosa.jpeg";
 
+    }else if(songs[currentSong].file === "radioanuncio2.mp3"){
+
+        coverImage.src = "radio.gif";
+
     }else if(songs[currentSong].file === "Saludo.mp3"){
 
         coverImage.src = "comerciales.jpeg";
@@ -471,7 +475,6 @@ function cambiarPortada(){
 
     }
 }
-
 
 cambiarPortada();
 
