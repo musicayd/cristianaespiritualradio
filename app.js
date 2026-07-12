@@ -449,17 +449,21 @@ songTitle.innerText = songs[currentSong].title;
 
 function cambiarPortada(){
 
-    if(songs[currentSong].file === "yoteseguire.mp3"){
+    if(songs[currentSong].file === "AnuncioRadio.mp3"){
+
+        coverImage.src = "AnuncioRadiogif.gif";
+
+    }else if(songs[currentSong].file === "radioanuncio2.mp3"){
+
+        coverImage.src = "radio.gif";
+
+    }else if(songs[currentSong].file === "yoteseguire.mp3"){
 
         coverImage.src = "yoteseguire.jpg";
 
     }else if(songs[currentSong].file === "laobramaravillosa.mp3"){
 
         coverImage.src = "laobramaravillosa.jpeg";
-
-    }else if(songs[currentSong].file === "radioanuncio2.mp3"){
-
-        coverImage.src = "radio.gif";
 
     }else if(songs[currentSong].file === "Saludo.mp3"){
 
