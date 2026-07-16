@@ -141,7 +141,7 @@ const songs = [
 
     { title: "Micromensajes", file: "radioanuncio2.mp3" },
 
-    { title: "Comerciales", file: "Saludo.mp3" },
+    { title: "Oración", file: "Saludo.mp3" },
 
     { title: "Anuncios", file: "Oracion.mp3" },
 
