@@ -428,7 +428,17 @@ const songs = [
     { title: "Sacrificio de amor y verdad", file: "sacrificiodeamoryverdad.mp3" },
 
     { title: "Sin saber de ti", file: "sinsaberdeti.mp3" },
-    
+
+    { title: "En el ayer", file: "enelayer.mp3" },
+
+    { title: "Esa gran convención", file: "esagranconvencion.mp3" },
+
+   { title: "Id a predicar", file: "idapredicar.mp3" },
+
+    { title: "La dicha del alma", file: "ladichadelalma.mp3" },
+
+    { title: "Encontre a Jesucristo", file: "encontreajesucr.mp3" },
+     
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
