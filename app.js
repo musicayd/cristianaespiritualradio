@@ -414,7 +414,21 @@ const songs = [
     { title: "Ante Dios", file: "antedios.mp3" },
 
     { title: "Puerta del cielo (Dedicacion)", file: "puertadelcielo.mp3" },
+    
+    { title: "La real riquezas", file: "larealriqueza.mp3" },
 
+    { title: "Nada de ti", file: "nadadeti.mp3" },
+
+    { title: "Nada de ti. N", file: "nadadetinorteno.mp3" },
+
+    { title: "Otra vez", file: "otravez.mp3" },
+
+    { title: "Prodigo", file: "prodigo.mp3" },
+
+    { title: "Sacrificio de amor y verdad", file: "sacrificiodeamoryverdad.mp3" },
+
+    { title: "Sin saber de ti", file: "sinsaberdeti.mp3" },
+    
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
