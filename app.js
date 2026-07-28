@@ -438,7 +438,17 @@ const songs = [
     { title: "La dicha del alma", file: "ladichadelalma.mp3" },
 
     { title: "Encontre a Jesucristo", file: "encontreajesucr.mp3" },
-     
+
+    { title: "El buen pastor", file: "elbuenpastor.mp3" },
+
+    { title: "Bastate de mi gracia (Grupo Alba)", file: "bastatedemigraciaAlb.mp3" },
+
+    { title: "Bello amanecer", file: "belloamanecer.mp3" },
+
+        { title: "Bodas del cordero", file: "bodasdelcordero.mp3" },
+
+     { title: "Cada que me hablan de ti", file: "cadaquemehablandeti.mp3" },
+    
     { title: "Yo te seguire D.A.R", file: "yoteseguire.mp3" }
 
 ];
