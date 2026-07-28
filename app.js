@@ -433,7 +433,7 @@ const songs = [
 
     { title: "Esa gran convención", file: "esagranconvencion.mp3" },
 
-   { title: "Id a predicar", file: "idapredicar.mp3" },
+   { title: "Id a predicar (Trio Ebenezer Cover)", file: "idapredicar.mp3" },
 
     { title: "La dicha del alma", file: "ladichadelalma.mp3" },
 
