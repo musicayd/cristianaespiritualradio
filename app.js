@@ -441,8 +441,6 @@ const songs = [
 
     { title: "El buen pastor", file: "elbuenpastor.mp3" },
 
-    { title: "Bastate de mi gracia (Grupo Alba)", file: "bastatedemigraciaAlb.mp3" },
-
     { title: "Bello amanecer", file: "belloamanecer.mp3" },
 
         { title: "Bodas del cordero", file: "bodasdelcordero.mp3" },
