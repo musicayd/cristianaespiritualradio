@@ -139,7 +139,7 @@ const songs = [
 
     { title: "📻 Radio", file: "AnuncioRadio.mp3" },
 
-    { title: "Bienvenida", file: "radioanuncio2.mp3" },
+    { title: "Bastate mi gracia (Grupo. Alba)", file: "radioanuncio2.mp3" },
 
     { title: "📻 Radio", file: "Saludo.mp3" },
 
