@@ -1,5 +1,28 @@
 const CACHE_NAME = "radio-cache-v67";
 
+/* =========================
+   FIREBASE CLOUD MESSAGING
+========================= */
+
+importScripts(
+    "https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"
+);
+
+importScripts(
+    "https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-compat.js"
+);
+
+firebase.initializeApp({
+    apiKey: "AIzaSyAhQzly1lZemafx1SU1iQKlav6oyDTOqKw",
+    authDomain: "radiocristianaespiritual.firebaseapp.com",
+    databaseURL: "https://radiocristianaespiritual-default-rtdb.firebaseio.com",
+    projectId: "radiocristianaespiritual",
+    storageBucket: "radiocristianaespiritual.appspot.com",
+    messagingSenderId: "93851149213",
+    appId: "1:93851149213:web:5816335e8b9e8d6314c574"
+});
+
+const messaging = firebase.messaging();
 const urlsToCache = [
 
     "./",
