@@ -23,6 +23,10 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database();
 
+const messaging = firebase.messaging();
+
+const vapidKey = "BPwgv0xUQNgv7GTRvg2Lgr1Sf_AJJoapFAtpDk7IEY0KKSDka16gTxYYFRuacM3pZqaQ23tZL_a-uZEk1fcsmw4";
+
 /* CONTADOR DE VISITAS */
 
 const today = new Date().toISOString().split("T")[0];
@@ -766,7 +770,45 @@ likeBtn.addEventListener("click", () => {
 
 if("serviceWorker" in navigator){
 
-    navigator.serviceWorker.register("sw.js");
+    navigator.serviceWorker.register("sw.js")
+    .then(async (registration) => {
+
+        console.log("Service Worker registrado");
+
+        try{
+
+            const permission = await Notification.requestPermission();
+
+            if(permission !== "granted"){
+                console.log("Permiso de notificaciones no concedido");
+                return;
+            }
+
+            const token = await messaging.getToken({
+                vapidKey: vapidKey,
+                serviceWorkerRegistration: registration
+            });
+
+            if(token){
+                console.log("TOKEN FCM:", token);
+            }else{
+                console.log("No se obtuvo token FCM");
+            }
+
+        }catch(error){
+
+            console.error(
+                "Error configurando notificaciones:",
+                error
+            );
+
+        }
+
+    })
+    .catch(error => {
+        console.error("Error registrando Service Worker:", error);
+    });
+
 }
 /* =========================
    WAKE LOCK
