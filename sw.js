@@ -87,29 +87,28 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
 
-    event.respondWith(
-
-        fetch(event.request)
-
-           .then(response => {
-
-    const responseClone = response.clone();
-
-    if(response.status === 200){
-
-        caches.open(CACHE_NAME)
-            .then(cache => {
-
-                cache.put(event.request, responseClone);
-            });
+    if(event.request.method !== "GET"){
+        return;
     }
 
-    return response;
-})
+    event.respondWith(
+        fetch(event.request)
+            .then(response => {
 
+                const responseClone = response.clone();
+
+                if(response.status === 200){
+                    caches.open(CACHE_NAME)
+                        .then(cache => {
+                            cache.put(event.request, responseClone);
+                        });
+                }
+
+                return response;
+            })
             .catch(() => {
-
                 return caches.match(event.request);
             })
     );
+
 });
