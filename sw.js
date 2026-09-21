@@ -23,6 +23,49 @@ firebase.initializeApp({
 });
 
 const messaging = firebase.messaging();
+
+messaging.onBackgroundMessage((payload) => {
+
+    console.log(
+        "[sw.js] Notificación recibida:",
+        payload
+    );
+
+    const notificationTitle =
+        payload.notification?.title || "Radio Cristiana Espiritual";
+
+    const notificationOptions = {
+
+        body:
+            payload.notification?.body ||
+            "Tienes un nuevo mensaje",
+
+        icon:
+            new URL(
+                "icon.png",
+                self.registration.scope
+            ).href,
+
+        badge:
+            new URL(
+                "icon.png",
+                self.registration.scope
+            ).href,
+
+        data: {
+            url:
+                payload.data?.url ||
+                "./"
+        }
+
+    };
+
+    return self.registration.showNotification(
+        notificationTitle,
+        notificationOptions
+    );
+
+});
 const urlsToCache = [
 
     "./",
